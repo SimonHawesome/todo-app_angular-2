@@ -57,10 +57,11 @@ export class AppComponent implements OnInit {
   }
 
 
-  checkCompletedTodos() {
+  checkCompletedTodos(): boolean {
 
     for (let i = 0; i < this.todos.length; i ++) {
       if (!this.todos[i].active) {
+        // return true to enable 'complete clear' button
         return true;
       }
     }
