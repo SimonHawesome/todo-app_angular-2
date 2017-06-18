@@ -11,24 +11,25 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class SortTodosPipe implements PipeTransform {
 
-    transform(value: any, listView: string): any {
+    transform(value: any, listFilter: string): any {
 
       let sortedTodos = [];
       for (let i = 0; i < value.length; i ++) {
-        if (listView === 'all') {
+        if (listFilter === 'all') {
           sortedTodos.push(value[i]);
         }
-        else if (listView === 'active') {
+        else if (listFilter === 'active') {
           if (value[i].active) {
             sortedTodos.push(value[i]);
           }
         }
-        else if (listView === 'complete') {
+        else if (listFilter === 'complete') {
           if (!value[i].active) {
             sortedTodos.push(value[i]);
           }
         }
       }
+      // return array
       return sortedTodos;
     }
 }

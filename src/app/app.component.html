@@ -16,7 +16,9 @@
           </div>
         </form>
         <ul class="list-group">
-          <li *ngFor="let todo of todos | sortTodosPipe: listView"
+          <!-- sortTodosPipe will return a filtered todo array and
+              listens to user changes from the list filter selector-->
+          <li *ngFor="let todo of todos | sortTodosPipe: listFilter"
               (click)="toggleTodoState(todo)" [class.done]="!todo.active"
               class="list-group-item noselect">
               <input type="checkbox" [checked]="!todo.active">{{todo.text}}</li>
@@ -27,7 +29,7 @@
   <section class="additional-actions">
     <div class="row">
       <div class="col-12">
-        <select #listToggle [(ngModel)]="listView" name="list-toggle">
+        <select [(ngModel)]="listFilter">
           <option value="all">All</option>
           <option value="active">Active</option>
           <option value="complete">Complete</option>
