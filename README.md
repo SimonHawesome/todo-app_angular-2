@@ -6,9 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Both the CLI and generated project have dependencies that require Node 6.9.0 or higher, together with NPM 3 or higher.
 
-## Globally install Angular CLI
+## Install dependencies
 
-Run `npm install -g @angular/cli`
+Run `npm install -g @angular/cli` and `npm install`.
 
 ## Development server
 
